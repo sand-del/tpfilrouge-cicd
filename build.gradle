@@ -37,3 +37,12 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jar {
+	archiveBaseName = 'app-devops'
+	archiveVersion = '0.0.1'
+}
+
+tasks.named('build').configure {
+	dependsOn(tasks.named('jar'))
+}
